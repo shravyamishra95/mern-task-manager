@@ -16,6 +16,11 @@ mongoose.connect(mongoUrl, err => {
   if (err) throw err;
   console.log("Mongodb connected...");
 });
+// ✅ Root route for Render
+app.get("/", (req, res) => {
+  res.send("✅ Backend is running on Render!");
+});
+
 
 app.use("/api/auth", authRoutes);
 app.use("/api/tasks", taskRoutes);
